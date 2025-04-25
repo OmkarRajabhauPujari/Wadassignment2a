@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h3>Register</h3>
+  <form id="form">
+    <input id="name" placeholder="Name" required><br>
+    <input id="email" placeholder="Email" required><br>
+    <button>Submit</button>
+  </form>
+  <a href="list.html">View Users</a>
+
+  <script>
+    document.getElementById("form").onsubmit = e => {
+      e.preventDefault();
+      let users = JSON.parse(localStorage.getItem("users") || "[]");
+      let user = {
+        name: form.name.value,
+        email: form.email.value
+      };
+      // Simulate AJAX POST
+      setTimeout(() => {
+        users.push(user);
+        localStorage.setItem("users", JSON.stringify(users));
+        form.reset();
+        alert("User saved!");
+      }, 300);
+    };
+  </script>
+</body>
+</html>
