@@ -1,0 +1,4 @@
+Name:Omkar
+class:TE
+subject:WAD
+
